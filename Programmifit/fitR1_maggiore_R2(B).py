@@ -44,7 +44,7 @@ print('Parametri iniziali:\n', pars)
 print('Matrice di covarianza:\n', covm)
 
 plt.figure(1)
-plt.title('Guadagno filtro R1=R2', fontsize=16)
+plt.title('Guadagno filtro R1>R2', fontsize=16)
 plt.xlabel('Frequenza  [Hz]')
 plt.ylabel('Guadagno [u.a.]')
 plt.loglog(ff, mod, color='blue')
