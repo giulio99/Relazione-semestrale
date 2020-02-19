@@ -36,7 +36,7 @@ for i in range(4):
     print(pars[i], '+-', np.sqrt(covm[i][i]))
 
 plt.figure(1)
-plt.loglog(ff, mod, color='blue')
-plt.errorbar(f, guadagno(f, *pars),dg , df, ls='', color='black', marker='.')
+plt.loglog(ff, guadagno(ff,*pars), color='blue')
+#plt.errorbar(f, guadagno(f, *pars),dg , df, ls='', color='black', marker='.')
 plt.errorbar(f, g, dg, df, ls='', color='red', marker='o')
 plt.show()
