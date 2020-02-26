@@ -51,29 +51,8 @@ plt.figure(1)
 plt.title('Guadagno filtro R1=R2', fontsize=16)
 plt.xlabel('Frequenza  [Hz]')
 plt.ylabel('Guadagno [u.a.]')
-plt.loglog(ff, mod, color='blue')
-plt.errorbar(f, g, dg, 0.05*f, ls='', color='red', marker='o')
-plt.errorbar(f, funz(f,*pars), dg, 0.05*f, linestyle='', color='black', marker='.')
+plt.loglog(ff,funz(ff,*pars), color='blue')
+plt.errorbar(f, g, dg, 0.05*f, ls='', color='red', marker='.')
 plt.grid()
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
