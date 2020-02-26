@@ -7,7 +7,7 @@ from scipy.optimize import curve_fit
 f, df, vin, dvin, vout, dvout=np.loadtxt('R1_uguale_R2.txt', unpack=True)
 
 g=vout/vin
-dg=np.sqrt(((1/vin)*dvout)**2+((vout*dvout)/(vin**2))**2)
+dg=np.sqrt(((1/vin)*dvout)**2+((vout*dvin)/(vin**2))**2)
 
 c2=1e-7
 c1=1e-5
