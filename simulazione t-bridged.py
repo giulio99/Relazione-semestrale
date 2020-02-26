@@ -18,7 +18,7 @@ G=(1+ww*1j*c2*(r1+r2)+((1j*ww)**2)*c1*c2*r1*r2)/(1+ww*1j*c2*(r1*(1+c1/c2)+r2)+((
 mod=np.sqrt((G.real)**2+(G.imag)**2)
 fi=np.arctan(G.imag/G.real)
 
-l, =plt.loglog(ff, mod)
+l, =ax[0].loglog(ff, mod)
 h, =ax[1].semilogx(ff, fi)
 
 axcolor = 'lightgoldenrodyellow'
