@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pylab as py
 from matplotlib.widgets import Slider, Button, RadioButtons
 
-fig, ax=plt.subplots()
+fig, ax=plt.subplots(2,1)
 plt.subplots_adjust( bottom=0.4)
 ff=np.logspace(-6,6,1000)
 ww=2*np.pi*ff
@@ -19,7 +19,7 @@ mod=np.sqrt((G.real)**2+(G.imag)**2)
 fi=np.arctan(G.imag/G.real)
 
 l, =plt.loglog(ff, mod)
-
+h, =ax[1].semilogx(ff, fi)
 
 axcolor = 'lightgoldenrodyellow'
 axc2 = plt.axes([0.25, 0.1, 0.65, 0.03], facecolor=axcolor)
@@ -39,6 +39,7 @@ def update(val):
     valr2 = sr2.val
     val=(1+ww*1j*valc2*(valr1+valr2)+((1j*ww)**2)*valc1*valc2*valr1*valr2)/(1+ww*1j*valc2*(valr1*(1+valc1/valc2)+valr2)+((1j*ww)**2)*valc1*valc2*valr1*valr2)
     l.set_ydata(np.sqrt((val.real)**2+(val.imag)**2))
+    h.set_ydata(np.arctan(val.imag/val.real))
     fig.canvas.draw_idle()
 
 sc1.on_changed(update)
@@ -59,18 +60,3 @@ def reset(event):
 button.on_clicked(reset)
 
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
