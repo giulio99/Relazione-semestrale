@@ -34,7 +34,7 @@ def funz(f, r1, r2,c1,c2):
     t=(1+ww*1j*c2*(r1+r2)+((1j*ww)**2)*h)/(1+ww*1j*c2*(r1*(1+c1/c2)+r2)+((1j*ww)**2)*h)
     return np.sqrt((t.real)**2+(t.imag)**2)
     
-init=(329,329,1e-7,1e-5)
+init=(329,329,1e-5,1e-7)
 
 pars, covm = curve_fit(funz,f , g, init, dg, absolute_sigma=False) 
 w0=1/(2*np.pi*np.sqrt((pars[0]*pars[1]*pars[2]*pars[3])))
